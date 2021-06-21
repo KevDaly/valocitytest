@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using CodingAssessment.Refactor;
+using Cards;
 
 namespace Tests
 {
@@ -46,6 +47,13 @@ namespace Tests
             var areThereYoungBobs = bobs.Any(b => b.DOB > todayMinusThirty);
             areThereYoungBobs.Should().BeFalse();
 
+        }
+        [Fact]
+        public void ShouldBe52Cards()
+        {
+            var deck = new Deck();
+            deck.Cards.Count.Should().Be(52);
+            
         }
     }
 }
